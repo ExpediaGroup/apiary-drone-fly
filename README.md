@@ -1,4 +1,4 @@
-# eg-tf-mod-drone-fly
+# Apiary-Drone-Fly
 Terraform module for spinning up a Kubernetes deployment for [Drone Fly](https://github.com/ExpediaGroup/drone-fly).
 
 ## Providers
@@ -70,3 +70,8 @@ ENV AWS_REGION us-east-1
 RUN cd /app/libs && \
 wget -q https://search.maven.org/remotecontent?filepath=com/expediagroup/apiary/apiary-metastore-listener/${APIARY_EXTENSIONS_VERSION}/apiary-metastore-listener-${APIARY_EXTENSIONS_VERSION}-all.jar -O apiary-metastore-listener-${APIARY_EXTENSIONS_VERSION}-all.jar
 ```
+
+# Legal
+This project is available under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html).
+
+Copyright 2020 Expedia, Inc.
