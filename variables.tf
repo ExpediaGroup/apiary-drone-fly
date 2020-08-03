@@ -67,7 +67,7 @@ variable "dronefly_image" {
 variable "dronefly_image_version" {
   description = "Version of Drone Fly docker image."
   type        = string
-  default     = "latest"
+  default     = "0.0.1"
 }
 
 variable "dronefly_k8s_role_iam" {
