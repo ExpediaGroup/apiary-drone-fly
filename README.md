@@ -40,7 +40,7 @@ locals {
 }
 
 module "drone-fly" {
-  source                              = "git::https://github.expedia.biz/eg-terraform/eg-tf-mod-drone-fly.git"
+  source                              = "git::https://github.com/ExpediaGroup/apiary-drone-fly.git"
   instance_name                       = "hms-listener-1"
   aws_region                          = "us-east-1"
   dronefly_image                      = "path/to/drone-fly-image-built-on-top-of-base-image"
