@@ -60,6 +60,10 @@ resource "kubernetes_deployment" "dronefly" {
             name  = "APIARY_LISTENER_LIST"
             value = var.apiary_listener_list
           }
+          env {
+            name  = "LOG4J_FORMAT_MSG_NO_LOOKUPS"
+            value = "true"
+          }
 
           dynamic "env" {
             for_each = var.additional_environment_variables
