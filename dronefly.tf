@@ -76,7 +76,7 @@ resource "kubernetes_deployment" "dronefly" {
 
           liveness_probe {
             http_get {
-              path = "/actuator/health"
+              path = "/actuator/health/liveness"
               port = var.k8s_dronefly_port
             }
             failure_threshold     = 1
