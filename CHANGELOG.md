@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.0.3] - 2023-04-26
+## [0.0.3] - 2023-04-27
 ### Added
 - Updated the liveness_probe pathway to the correct endpoint in order to stop Kubernetes restarting drone-fly. Changed as part of a Springboot upgrade.
 ## [0.0.2] - 2021-12-16
