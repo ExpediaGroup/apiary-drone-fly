@@ -29,7 +29,6 @@ resource "kubernetes_deployment" "dronefly" {
           name = local.instance_alias
         }
         annotations = {
-          "iam.amazonaws.com/role" = var.dronefly_k8s_role_iam
           "prometheus.io/scrape" : "${var.prometheus_enabled}"
           "prometheus.io/port" : var.k8s_dronefly_port
           "prometheus.io/path" : "/actuator/prometheus"
@@ -37,6 +36,8 @@ resource "kubernetes_deployment" "dronefly" {
       }
 
       spec {
+        service_account_name = var.service_account_name
+        automount_service_account_token = true
         container {
           image             = "${var.dronefly_image}:${var.dronefly_image_version}"
           name              = local.instance_alias

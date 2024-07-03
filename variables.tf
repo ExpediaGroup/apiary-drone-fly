@@ -97,3 +97,9 @@ variable "apiary_listener_list" {
   type        = string
   default     = ""
 }
+
+variable "service_account_name" {
+  description = "Service account used by the deployment to access aws services"
+  type        = string
+  default     = ""
+}
