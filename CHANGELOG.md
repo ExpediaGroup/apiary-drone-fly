@@ -3,9 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.0.1] - 2024-07-03
+## [1.0.2] - 2024-07-03
 ### Added
 - Updated configuration to enable irsa authentication method.
+
+## [1.0.1] - 2024-05-02
+### Added
+- Springboot upgrade
 
 ## [1.0.0] - 2023-05-02
 ### Added

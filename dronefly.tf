@@ -4,7 +4,7 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
 
-resource "kubernetes_deployment" "dronefly" {
+resource "kubernetes_deployment_v1" "dronefly" {
 
   metadata {
     name      = local.instance_alias
@@ -85,11 +85,11 @@ resource "kubernetes_deployment" "dronefly" {
             period_seconds        = 10
           }
           resources {
-            limits {
+            limits = {
               cpu    = var.k8s_dronefly_cpu
               memory = var.k8s_dronefly_memory
             }
-            requests {
+            requests = {
               cpu    = var.k8s_dronefly_cpu
               memory = var.k8s_dronefly_memory
             }
