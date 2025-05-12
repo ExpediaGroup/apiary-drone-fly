@@ -36,13 +36,13 @@ variable "k8s_dronefly_port" {
 
 variable "k8s_dronefly_memory" {
   description = "Total memory to allocate to the Drone Fly pod."
-  default     = "2Gi"
+  default     = "4Gi"
   type        = string
 }
 
 variable "k8s_dronefly_cpu" {
   description = "Total CPU to allocate to the Drone Fly pod."
-  default     = "500m"
+  default     = "1000m"
   type        = string
 }
 
