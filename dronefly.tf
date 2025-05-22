@@ -29,6 +29,9 @@ resource "kubernetes_deployment_v1" "dronefly" {
           name = local.instance_alias
         }
         annotations = {
+          "ad.datadoghq.com/${local.instance_alias}.check_names"  = var.datadog_metrics_enabled ? "[\"prometheus\"]" : null
+          "ad.datadoghq.com/${local.instance_alias}.init_configs" = var.datadog_metrics_enabled ? "[{}]" : null
+          "ad.datadoghq.com/${local.instance_alias}.instances"    = var.datadog_metrics_enabled ? "[{ \"prometheus_url\": \"http://%%host%%:${var.k8s_dronefly_port}/actuator/prometheus\", \"namespace\": \"${var.datadog_namespace}\", \"metrics\":[{\"${var.datadog_metric_filter}\":{\"type\":\"gauge\"}}]}]" : null
           "prometheus.io/scrape" : "${var.prometheus_enabled}"
           "prometheus.io/port" : var.k8s_dronefly_port
           "prometheus.io/path" : "/actuator/prometheus"
