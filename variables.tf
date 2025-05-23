@@ -116,8 +116,8 @@ variable "datadog_namespace" {
   default     = "dronefly"
 }
 
-variable "datadog_metric_filter" {
+variable "datadog_metric_filters" {
   description = "Datadog metric key used to filter metrics sent to Datadog. Default value is a regex to send all of them."
-  type        = string
-  default     = "^.+"
+  type        = list(string)
+  default     = []
 }
