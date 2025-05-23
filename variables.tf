@@ -103,3 +103,21 @@ variable "service_account_name" {
   type        = string
   default     = ""
 }
+
+variable "datadog_metrics_enabled" {
+  description = "Datadog namespace to use as prefix when deploying metrics."
+  type        = bool
+  default     = false
+}
+
+variable "datadog_namespace" {
+  description = "Datadog namespace to use as prefix when deploying metrics."
+  type        = string
+  default     = "dronefly"
+}
+
+variable "datadog_metric_filters" {
+  description = "Datadog metrics key used to filter metrics sent to Datadog."
+  type        = list(string)
+  default     = []
+}
