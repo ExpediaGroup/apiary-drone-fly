@@ -31,7 +31,7 @@ resource "kubernetes_deployment_v1" "dronefly" {
         annotations = {
           "ad.datadoghq.com/${local.instance_alias}.check_names"  = var.datadog_metrics_enabled ? "[\"openmetrics\",\"kafka_consumer\"]" : null
           "ad.datadoghq.com/${local.instance_alias}.init_configs" = var.datadog_metrics_enabled ? "[{},{}]" : null
-          "ad.datadoghq.com/${local.instance_alias}.instances"    = var.datadog_metrics_enabled ? "[{ \"openmetrics_endpoint\": \"http://%%host%%:${var.k8s_dronefly_port}/actuator/prometheus\", \"namespace\": \"${var.datadog_namespace}\", \"metrics\":[ \"${join("\",\"", var.datadog_metric_filters)}\" ]}]" : null
+          "ad.datadoghq.com/${local.instance_alias}.instances"    = var.datadog_metrics_enabled ? "[{ \"openmetrics_endpoint\": \"http://%%host%%:${var.k8s_dronefly_port}/actuator/prometheus\", \"namespace\": \"${var.datadog_namespace}\", \"metrics\":[ \"${join("\",\"", var.datadog_metric_filters)}\" ]}, {\"consumer_groups\": {\"${var.datadog_kafka_group_id}\": {}},\"kafka_client_api_version\": \"${var.datadog_kafka_client_api_version}\",\"kafka_connect_str\": \"${var.datadog_kafka_bootstrap_servers}\"}]" : null
           "prometheus.io/scrape" : "${var.prometheus_enabled}"
           "prometheus.io/port" : var.k8s_dronefly_port
           "prometheus.io/path" : "/actuator/prometheus"
