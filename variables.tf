@@ -121,3 +121,21 @@ variable "datadog_metric_filters" {
   type        = list(string)
   default     = []
 }
+
+variable "datadog_kafka_group_id" {
+  description = "Datadog Kafka group id to get consumer metrics."
+  type        = string
+  default     = "dronefly-consumer-group"
+}
+
+variable "datadog_kafka_client_api_version" {
+  description = "Datadog kafka client api version."
+  type        = string
+  default     = "2.5.0"
+}
+
+variable "datadog_kafka_bootstrap_servers" {
+  description = "Datadog kafka boostrap servers."
+  type        = string
+  default     = "b-1.msk-cluster-1.abcde.c2.kafka.us-east-1.amazonaws.com:9092,b-2.msk-cluster-1.abcde.c2.kafka.us-east-1.amazonaws.com:9092"
+}
