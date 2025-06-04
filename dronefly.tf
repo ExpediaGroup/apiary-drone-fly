@@ -16,7 +16,7 @@ resource "kubernetes_deployment_v1" "dronefly" {
   }
 
   spec {
-    replicas = 1
+    replicas = var.k8s_replicas
     selector {
       match_labels = {
         name = local.instance_alias
