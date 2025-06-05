@@ -28,6 +28,12 @@ variable "k8s_namespace" {
   default     = "dronefly"
 }
 
+variable "k8s_replicas" {
+  description = "Number of drone-fly replicas."
+  type        = number
+  default     = 1
+}
+
 variable "k8s_dronefly_port" {
   description = "Internal port that Drone Fly runs on."
   type        = number
